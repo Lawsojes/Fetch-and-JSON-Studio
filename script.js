@@ -6,14 +6,17 @@ window.addEventListener("load", function(){
             console.log(json)
             let output = document.getElementById("container")
             for (let key in json){
-                output.innerHTML =`
-                <div>
+                output.innerHTML +=`
+                <div class=astronaut>
                     <div>
-                    <h3>${json.firstName} ${json.lastName}</h3>
+                    <h3>${json[key].firstName} ${json[key].lastName}</h3>
                     <ul>
-
+                        <li>Hours in space: ${json[key].hoursInSpace} </li>
+                        <li>Active: ${json[key].active} </li>
+                        <li>Skills: ${json[key].skills} </li>
                     </ul>
                     </div>
+                    <img class="avatar"src=${json[key].picture}>
                 </div>
                 `
             }
